@@ -64,14 +64,6 @@ jobs:
       - name: Install dependencies
         run: bundle install --jobs 4 --retry 3
 
-      - name: Set up database
-        env:
-          DATABASE_URL: postgresql://postgres:password@localhost:5432/myapp_test
-          RAILS_ENV: test
-        run: |
-          bin/rails db:create
-          bin/rails db:migrate
-
       - name: Run RSpec tests
         env:
           RAILS_ENV: test

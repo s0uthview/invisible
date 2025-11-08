@@ -36,6 +36,14 @@ module Dummy
     # For compatibility with applications that use this config
     config.action_controller.include_all_helpers = false
 
+    # skip model autoloading since we don't use ActiveRecord
+    # remove model paths early before they get frozen
+    config.before_initialize do
+      if config.paths["app/models"]
+        config.paths["app/models"].existent.clear
+      end
+    end
+
     # Please, add to the `ignore` list any other `lib` subdirectories that do
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
     # Common ones are `templates`, `generators`, or `middleware`, for example.
