@@ -1,5 +1,7 @@
 # invisible
 
+![CI](https://github.com/s0uthview/invisible/actions/workflows/ci.yml/badge.svg)
+
 a rails plugin that blocks bots without showing any captchas.
 
 ## features
