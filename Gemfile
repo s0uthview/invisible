@@ -16,3 +16,6 @@ gem "rubocop-rails-omakase", require: false
 # gem "debug", ">= 1.0.0"
 
 gem "tzinfo-data", platforms: %i[ windows jruby ]
+
+# Database
+gem "pg", "~> 1.6"
